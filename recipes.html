@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <title>View Recipes</title>
+</head>
+<body>
+    <div class="container">
+        <div class="d-flex justify-content-end mb-2">
+            <a href="/dashboard" class="mr-2">Dashboard |</a>
+            <a href="/logout"> Logout</a>
+        </div>
+        <h1>Recipe Details</h1>
+        <div class="d-flex justify-content-between">
+            <h5 class="card-title"><strong> Recipe:</strong> {{ recipe.name }}</h5>
+            <p class="card-text"id="cook_id"><strong>Posted by:</strong>{{ recipe.cook.first_name }} {{ recipe.cook.last_name }}</p>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <p class="card-text"><strong>Description:</strong> {{ recipe.description }}</p>
+                <p class="card-text"><strong>Instructions:</strong> {{ recipe.instructions }}</p>
+                <p class="card-text"><strong>Date:</strong> {{ recipe.date }}</p>
+                <p class="card-text"><strong>Under 30:</strong> {{ "Yes" if recipe.under30 else "No" }}</p>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
